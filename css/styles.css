@@ -517,12 +517,14 @@ button:focus {
   position: relative;
   text-decoration: none;
   display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .project-li a:focus,
 .project-li a:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+ 
 }
 .project-text-block {
   border-bottom: 1px #eeeeee solid;
@@ -545,12 +547,24 @@ button:focus {
   color: var(--secondary-text-color);
   font-weight: var(--regular-font-weight);
 }
-.project-img {
+.project-img-hover-discription {
+
+ overflow: hidden;
+  display: inline-block;
   position: relative;
+  width: 369.984px;
+  height: 294px;
+
+}
+.project-img {
+ position: absolute;
+
+
 }
 .project-hover-discription {
-  opacity: 0;
- padding: 0 ;
+  transform: translateY(-294px);
+  overflow: hidden;
+  padding: 0 ;
   position: absolute;
   top: 0;
   left: 0;
@@ -562,21 +576,13 @@ button:focus {
   line-height: 1.55;
   letter-spacing: 0.03em;
   padding: 63px 24px;
-}
-.project-hover-discription:hover {
-  visibility: visible;
-  opacity: 100;
-}
-.project-img-hover-discription:hover {
-  display: inline-block;
-  position: absolute;
-  background-color: #2196f3e5;
   width: 369.984px;
   height: 294px;
-  transform: translateY(-294px);
-  
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   background-color: #2196f3e5;
 }
+
+  
+
 /* !!! ------------------ FOOTER ------------------ !!! */
 .footer {
   background-color: var(--dark-background);
