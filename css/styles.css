@@ -424,7 +424,7 @@ img {
   fill: #2196f3;
 }
 .clientage-icon {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #afb1b8;
 }
 
@@ -672,7 +672,7 @@ button:focus {
 }
 /* !!! END FOOTER !!! */
 .backdrop {
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -681,6 +681,8 @@ button:focus {
   background-color: #00000020;
 }
 .backdrop.is-hidden {
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -693,7 +695,10 @@ button:focus {
   width: 528px;
   height: 580px;
   background-color: #fff;
-  
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal-win {
+  transform: translateY(200px);
 }
 .close-btn {
   display: flex;
